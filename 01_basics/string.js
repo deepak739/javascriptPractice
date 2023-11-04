@@ -14,6 +14,7 @@ const myName = "DeepakKumarRana"
 const noName = new String('DeepakKR')
 console.log(myName);
 console.log(noName);
+console.log(typeof noName);
 
 
 /*String {'DeepakKR'}
