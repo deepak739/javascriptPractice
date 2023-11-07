@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language List</title>
+</head>
+<body>
+    <ul class = "language">
+        <li>Javascript</li>
+    </ul>
+</body>
+    <script>
+        
+
+        function addList(newItem)
+        {
+            const list1 = document.createElement("li")
+            list1.innerHTML = `${newItem}`
+            document.querySelector('.language').appendChild(list1)
+            
+        }
+        addList("Python")
+        addList("Ruby")
+
+        function optimisedListAdd(addinglist){
+            const optilist = document.createElement("li")
+            optilist.appendChild(document.createTextNode(`${addinglist}`))
+            document.querySelector('.language').appendChild(optilist)
+
+
+        }
+        optimisedListAdd("golang")
+        optimisedListAdd("typescript")
+        optimisedListAdd("react")
+
+        console.log(optimisedListAdd);
+
+        //Editing
+        // const replacing = document.querySelector("li:nth-child(2)")
+        // const replacinglang = document.createElement("li")
+        // replacinglang.innerText = "Artificial Learning"
+        // replacing.replaceWith(replacinglang)
+
+        //Removing
+       // document.querySelector("li:nth-child(4)").remove()
+
+        const colorChange = document.querySelector("li:nth-child(3)")
+        //colorChange.style.color = "green"
+        colorChange.style.color='red'
+        //1 --> green
+        //2 --> blue
+        //3 -->red
+        //4 --> purple
+        //5 --> yellow
+        //6 --> orange
+
+        
+
+
+
+        
+        
+
+
+
+    </script>
+</html>

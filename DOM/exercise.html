@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding love</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const h = document.createElement("h2")
+    console.log(h);
+    h.title = "heading"
+    h.setAttribute("type","head")
+    h.innerText = "Hi"
+    document.body.appendChild(h)
+    const button = document.createElement("button")
+    //button.type = "submit"
+    
+    button.innerText = "Click Me"
+    
+    
+    //console.log(button);
+    const bChild = document.body.appendChild(button)
+    button.onclick = clickFunc
+    function clickFunc(){
+        alert("Hey, congooo!! You have successfully clicked me!")
+    }
+</script>
+</html>
