@@ -1,0 +1,76 @@
+<!-- Asynchronous JavaScript and XML, or Ajax, is not a technology in itself, but rather an approach to using a number of existing technologies together, including HTML or XHTML, CSS, JavaScript, DOM, XML, XSLT, and most importantly the XMLHttpRequest object. When these technologies are combined in the Ajax model, web applications are able to make quick, incremental updates to the user interface without reloading the entire browser page. This makes the application faster and more responsive to user actions. Ajax's most appealing characteristic is its "asynchronous" nature, which means it can communicate with the server, exchange data, and update the page without having to refresh the page.
+
+Although X in Ajax stands for XML, JSON is preferred because it is lighter in size and is written in JavaScript. Both JSON and XML are used for packaging information in the Ajax model. -->
+
+<!-- XMLHttpRequest: readyState property
+The XMLHttpRequest.readyState property returns the state an XMLHttpRequest client is in. An XHR client exists in one of the following states:
+
+Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+UNSENT
+The XMLHttpRequest client has been created, but the open() method hasn't been called yet.
+
+OPENED
+open() method has been invoked. During this state, the request headers can be set using the setRequestHeader() method and the send() method can be called which will initiate the fetch.
+
+HEADERS_RECEIVED
+send() has been called, all redirects (if any) have been followed and the response headers have been received.
+
+LOADING
+Response's body is being received. If responseType is "text" or empty string, responseText will have the partial text response as it loads.
+
+DONE
+The fetch operation is complete. This could mean that either the data transfer has been completed successfully or failed.
+
+Example
+JS
+Copy to Clipboard
+
+const xhr = new XMLHttpRequest();
+console.log("UNSENT", xhr.readyState); // readyState will be 0
+
+xhr.open("GET", "/api", true);
+console.log("OPENED", xhr.readyState); // readyState will be 1
+
+xhr.onprogress = () => {
+  console.log("LOADING", xhr.readyState); // readyState will be 3
+};
+
+xhr.onload = () => {
+  console.log("DONE", xhr.readyState); // readyState will be 4
+};
+
+xhr.send(null); -->
+ 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+ </body>
+ <script>
+    // sabse pehle ek object banate hai
+    // XMLHttpRequest  --> ek method hai aur isi ke through data send kr skte hai aur receive kr skte hai
+    const requestUrl = "https://randomuser.me/api/"
+    const xhr = new XMLHttpRequest(); // to yaha pe XMLHttpRequest class ka object bna rhe h aur iske reference se hum is class ke methods ko access krenge
+    xhr.open('GET',requestUrl) //open ek method hai jiske bare me upar notes me likha hua hai
+    xhr.onreadystatechange = function(){  //yaha pe hum ye check kr rhe hh ki state change ho rha h ya nhi, onreadystatechange ek method hai XMLHttpRequest class ke andar jo ek function accept krta hai
+        console.log(xhr.readyState);
+        if(xhr.readyState == 4)
+        {
+            const data = Object(this.responseText)
+            console.log(data.location);
+        }
+    }
+    xhr.send()
+
+ </script>
+ </html>
