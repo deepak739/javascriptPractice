@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id ="orangebutton">Orange</button>
+    <button id ="greenbutton">Green</button>
+    <button id ="yellowbutton">Yellow</button>
+    
+</body>
+<script>
+    // document.getElementById("orangebutton").onclick = function(){
+    //     document.body.style.backgroundColor = `orange`
+    // }
+    // document.getElementById("greenbutton").onclick = function(){
+    //     document.body.style.backgroundColor = `green`
+    // }
+    function clickHandler(color){
+        //document.body.style.backgroundColor = `${color}`
+        return function(){
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+document.getElementById('orangebutton').onclick = clickHandler("orange")
+document.getElementById('greenbutton').onclick = clickHandler("green")
+document.getElementById('yellowbutton').onclick = clickHandler("yellow")
+</script>
+</html>
+
+
